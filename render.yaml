@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: brizzah-robo-profissional
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: API_TOKEN
+        sync: false
+      - key: WHATSAPP_GROUP_URL
+        sync: false
+      - key: SITE_NAME
+        value: Brizzah
+      - key: INSTAGRAM_URL
+        value: https://instagram.com/brizzah.br
+      - key: MAX_INSTAGRAM_ITEMS
+        value: 100
